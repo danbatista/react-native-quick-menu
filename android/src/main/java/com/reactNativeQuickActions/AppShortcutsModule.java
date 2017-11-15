@@ -32,6 +32,7 @@ class AppShortcutsModule extends ReactContextBaseJavaModule {
 
     private static final String ACTION_SHORTCUT = "ACTION_SHORTCUT";
     private static final String SHORTCUT_TYPE = "SHORTCUT_TYPE";
+    private static final String USER_INFO_URL = "USER_INFO_URL";
 
     private List<ShortcutItem> mShortcutItems;
 
@@ -68,9 +69,15 @@ class AppShortcutsModule extends ReactContextBaseJavaModule {
 
                 if (ACTION_SHORTCUT.equals(intent.getAction())) {
                     String type = intent.getStringExtra(SHORTCUT_TYPE);
+                    String url = intent.getStringExtra(USER_INFO_URL);
                     if (type != null) {
                         map = Arguments.createMap();
                         map.putString("type", type);
+                        if (url != null) {
+                            WritableMap userInfo = Arguments.createMap();
+                            userInfo.putString("url", url);
+                            map.putMap("userInfo", userInfo);
+                        }
                     }
                 }
             }
@@ -107,6 +114,7 @@ class AppShortcutsModule extends ReactContextBaseJavaModule {
             Intent intent = new Intent(context, currentActivity.getClass());
             intent.setAction(ACTION_SHORTCUT);
             intent.putExtra(SHORTCUT_TYPE, item.type);
+            intent.putExtra(USER_INFO_URL, item.userInfo.getUrl());
 
             shortcuts.add(new ShortcutInfo.Builder(context, "id" + i)
                     .setShortLabel(item.title)

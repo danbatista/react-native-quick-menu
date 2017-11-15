@@ -19,4 +19,9 @@ class UserInfo {
         map.putString("url", url);
         return map;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
 }
