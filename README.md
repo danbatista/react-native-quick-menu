@@ -1,4 +1,4 @@
-react-native home screen quick actions
+React Native Quick Menu
 ======================================
 
 Support for the new 3D Touch home screen quick actions for your React Native apps!
