@@ -1,4 +1,4 @@
-package com.reactNativeQuickActions;
+package com.reactNativeQuickMenu;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -159,7 +159,7 @@ class AppShortcutsModule extends ReactContextBaseJavaModule {
         if (item != null) {
             getReactApplicationContext()
                     .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                    .emit("quickActionShortcut", item.toWritableMap());
+                    .emit("quickMenuShortcut", item.toWritableMap());
         }
     }
 

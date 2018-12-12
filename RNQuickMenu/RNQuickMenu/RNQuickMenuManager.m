@@ -1,6 +1,6 @@
 //
-//  RNQuickAction.m
-//  RNQuickAction
+//  RNQuickMenu.m
+//  RNQuickMenu
 //
 //  Created by Jordan Byron on 9/26/15.
 //  Copyright © 2015 react-native. All rights reserved.
@@ -10,11 +10,11 @@
 #import <React/RCTConvert.h>
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTUtils.h>
-#import "RNQuickActionManager.h"
+#import "RNQuickMenuManager.h"
 
 NSString *const RCTShortcutItemClicked = @"ShortcutItemClicked";
 
-NSDictionary *RNQuickAction(UIApplicationShortcutItem *item) {
+NSDictionary *RNQuickMenu(UIApplicationShortcutItem *item) {
     if (!item) return nil;
     return @{
         @"type": item.type,
@@ -23,7 +23,7 @@ NSDictionary *RNQuickAction(UIApplicationShortcutItem *item) {
     };
 }
 
-@implementation RNQuickActionManager
+@implementation RNQuickMenuManager
 {
     UIApplicationShortcutItem *_initialAction;
 }
@@ -36,7 +36,7 @@ RCT_EXPORT_MODULE();
 {
     if ((self = [super init])) {
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(handleQuickActionPress:)
+                                                 selector:@selector(handleQuickMenuPress:)
                                                      name:RCTShortcutItemClicked
                                                    object:nil];
     }
@@ -138,27 +138,27 @@ RCT_EXPORT_METHOD(clearShortcutItems)
     [UIApplication sharedApplication].shortcutItems = nil;
 }
 
-+ (void)onQuickActionPress:(UIApplicationShortcutItem *) shortcutItem completionHandler:(void (^)(BOOL succeeded)) completionHandler
++ (void)onQuickMenuPress:(UIApplicationShortcutItem *) shortcutItem completionHandler:(void (^)(BOOL succeeded)) completionHandler
 {
-    RCTLogInfo(@"[RNQuickAction] Quick action shortcut item pressed: %@", [shortcutItem type]);
+    RCTLogInfo(@"[RNQuickMenu] Quick action shortcut item pressed: %@", [shortcutItem type]);
 
     [[NSNotificationCenter defaultCenter] postNotificationName:RCTShortcutItemClicked
                                                         object:self
-                                                      userInfo:RNQuickAction(shortcutItem)];
+                                                      userInfo:RNQuickMenu(shortcutItem)];
 
     completionHandler(YES);
 }
 
-- (void)handleQuickActionPress:(NSNotification *) notification
+- (void)handleQuickMenuPress:(NSNotification *) notification
 {
-    [_bridge.eventDispatcher sendDeviceEventWithName:@"quickActionShortcut"
+    [_bridge.eventDispatcher sendDeviceEventWithName:@"QuickMenuShortcut"
                                                 body:notification.userInfo];
 }
 
 - (NSDictionary *)constantsToExport
 {
     return @{
-      @"initialAction": RCTNullIfNil(RNQuickAction(_initialAction))
+      @"initialAction": RCTNullIfNil(RNQuickMenu(_initialAction))
     };
 }
 

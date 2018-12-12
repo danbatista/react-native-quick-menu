@@ -1,4 +1,4 @@
-package com.reactNativeQuickActions;
+package com.reactNativeQuickMenu;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReadableMap;

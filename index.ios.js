@@ -1,5 +1,5 @@
-var RNQuickActionManager = require('react-native').NativeModules.RNQuickActionManager;
-var _initialAction = RNQuickActionManager && RNQuickActionManager.initialAction;
+var RNQuickMenuManager = require('react-native').NativeModules.RNQuickMenuManager;
+var _initialAction = RNQuickMenuManager && RNQuickMenuManager.initialAction;
 
 module.exports = {
   /**
@@ -21,20 +21,20 @@ module.exports = {
    * Adds shortcut items to application
    */
   setShortcutItems: function(items) {
-    RNQuickActionManager.setShortcutItems(items);
+    RNQuickMenuManager.setShortcutItems(items);
   },
 
   /**
    * Clears all previously set dynamic icons
    */
   clearShortcutItems: function() {
-    RNQuickActionManager.clearShortcutItems();
+    RNQuickMenuManager.clearShortcutItems();
   },
 
   /**
    * Check if quick actions are supported
    */
    isSupported: function(callback) {
-     RNQuickActionManager.isSupported(callback);
+     RNQuickMenuManager.isSupported(callback);
    }
 };

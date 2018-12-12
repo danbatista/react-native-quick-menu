@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD90517D1BD2EE4A00EFDEBC /* RNQuickActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90517B1BD2EE4A00EFDEBC /* RNQuickActionManager.m */; settings = {ASSET_TAGS = (); }; };
+		AD90517D1BD2EE4A00EFDEBC /* RNQuickMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90517B1BD2EE4A00EFDEBC /* RNQuickMenuManager.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		91090D8B1BB6C934009AE358 /* libRNQuickAction.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNQuickAction.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD90517B1BD2EE4A00EFDEBC /* RNQuickActionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNQuickActionManager.m; sourceTree = "<group>"; };
-		AD90517C1BD2EE4A00EFDEBC /* RNQuickActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNQuickActionManager.h; sourceTree = "<group>"; };
+		91090D8B1BB6C934009AE358 /* libRNQuickMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNQuickMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD90517B1BD2EE4A00EFDEBC /* RNQuickMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNQuickMenuManager.m; sourceTree = "<group>"; };
+		AD90517C1BD2EE4A00EFDEBC /* RNQuickMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNQuickMenuManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,7 @@
 		91090D821BB6C934009AE358 = {
 			isa = PBXGroup;
 			children = (
-				91090D8D1BB6C934009AE358 /* RNQuickAction */,
+				91090D8D1BB6C934009AE358 /* RNQuickMenu */,
 				91090D8C1BB6C934009AE358 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,26 +50,26 @@
 		91090D8C1BB6C934009AE358 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				91090D8B1BB6C934009AE358 /* libRNQuickAction.a */,
+				91090D8B1BB6C934009AE358 /* libRNQuickMenu.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		91090D8D1BB6C934009AE358 /* RNQuickAction */ = {
+		91090D8D1BB6C934009AE358 /* RNQuickMenu */ = {
 			isa = PBXGroup;
 			children = (
-				AD90517B1BD2EE4A00EFDEBC /* RNQuickActionManager.m */,
-				AD90517C1BD2EE4A00EFDEBC /* RNQuickActionManager.h */,
+				AD90517B1BD2EE4A00EFDEBC /* RNQuickMenuManager.m */,
+				AD90517C1BD2EE4A00EFDEBC /* RNQuickMenuManager.h */,
 			);
-			path = RNQuickAction;
+			path = RNQuickMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		91090D8A1BB6C934009AE358 /* RNQuickAction */ = {
+		91090D8A1BB6C934009AE358 /* RNQuickMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 91090D941BB6C934009AE358 /* Build configuration list for PBXNativeTarget "RNQuickAction" */;
+			buildConfigurationList = 91090D941BB6C934009AE358 /* Build configuration list for PBXNativeTarget "RNQuickMenu" */;
 			buildPhases = (
 				91090D871BB6C934009AE358 /* Sources */,
 				91090D881BB6C934009AE358 /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = RNQuickAction;
-			productName = RNQuickAction;
-			productReference = 91090D8B1BB6C934009AE358 /* libRNQuickAction.a */;
+			name = RNQuickMenu;
+			productName = RNQuickMenu;
+			productReference = 91090D8B1BB6C934009AE358 /* libRNQuickMenu.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 91090D861BB6C934009AE358 /* Build configuration list for PBXProject "RNQuickAction" */;
+			buildConfigurationList = 91090D861BB6C934009AE358 /* Build configuration list for PBXProject "RNQuickMenu" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -111,7 +111,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				91090D8A1BB6C934009AE358 /* RNQuickAction */,
+				91090D8A1BB6C934009AE358 /* RNQuickMenu */,
 			);
 		};
 /* End PBXProject section */
@@ -121,7 +121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD90517D1BD2EE4A00EFDEBC /* RNQuickActionManager.m in Sources */,
+				AD90517D1BD2EE4A00EFDEBC /* RNQuickMenuManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +241,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		91090D861BB6C934009AE358 /* Build configuration list for PBXProject "RNQuickAction" */ = {
+		91090D861BB6C934009AE358 /* Build configuration list for PBXProject "RNQuickMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				91090D921BB6C934009AE358 /* Debug */,
@@ -250,7 +250,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91090D941BB6C934009AE358 /* Build configuration list for PBXNativeTarget "RNQuickAction" */ = {
+		91090D941BB6C934009AE358 /* Build configuration list for PBXNativeTarget "RNQuickMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				91090D951BB6C934009AE358 /* Debug */,
