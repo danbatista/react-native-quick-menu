@@ -151,7 +151,7 @@ RCT_EXPORT_METHOD(clearShortcutItems)
 
 - (void)handleQuickMenuPress:(NSNotification *) notification
 {
-    [_bridge.eventDispatcher sendDeviceEventWithName:@"QuickMenuShortcut"
+    [_bridge.eventDispatcher sendDeviceEventWithName:@"quickMenuShortcut"
                                                 body:notification.userInfo];
 }
 
