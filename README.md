@@ -130,6 +130,8 @@ QuickActions.popInitialAction()
   .catch(console.error);
 ```
 
+Please note that on Android if android:launchMode is set to default value standard in AndroidManifest.xml, the app will be re-created each time when app is being brought back from background and it won't receive quickActionShortcut event from DeviceEventEmitter, instead popInitialAction will be receiving the app shortcut event.
+
 ### Check if 3D Touch is supported
 
 The following function will alert you if the user's device supports 3D Touch. Please
